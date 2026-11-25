@@ -1,6 +1,6 @@
 {
   "schema": "mailbox-asset-lock-v1",
-  "release_version": "1.0.0",
+  "release_version": "1.0.1",
   "inherited_base": "magic-mailbox-v0.2.6",
   "repository": "https://github.com/elpsycongroo4869-boop/xiaobunben-magic-mailbox",
   "v014_frozen_baseline_sha256": {
@@ -31,19 +31,19 @@
   "assets": {
     "role_card": {
       "path": "assets/roles/role_card.json",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "AUTHORITATIVE_ROLE_CARD",
       "description": "恋人伴侣通用角色卡（支持零代码初始化）",
-      "sha256": "4d2abc38536ad40c9be1d79e490445ab5b9ef0db1ba8e94c34ac51466b556c53",
-      "bytes": 3831
+      "sha256": "f364390371a27c623dd337e14f4d89c51bc10e9026dde2a644e78fa4f0a6c013",
+      "bytes": 4331
     },
     "literary_persona": {
       "path": "assets/roles/literary_persona.md",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "WAVE_VERBATIM_BRIEF",
       "description": "私人手写信文学人格与书写原则",
-      "sha256": "3d5bc315407d1422e0f72be09ed905158fef5734b32136fcab955f7fa597e3ef",
-      "bytes": 3694
+      "sha256": "74ae812f93dffbf46f0a384175588357e03345907e4ad9a24ec860e2983ad094",
+      "bytes": 4459
     },
     "character_relationship_prompt": {
       "path": "assets/anchors/character_relationship_prompt.md",
@@ -63,19 +63,19 @@
     },
     "handwriting_open_motivation_mail003": {
       "path": "assets/anchors/handwriting_open_motivation_mail003.md",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
       "description": "书写开放艺术动机锚点",
-      "sha256": "79e3570e0cbf8c26ba72ee81c34a7a4bb7269d8283be6a199b78d40eb3d23ef1",
-      "bytes": 517
+      "sha256": "a8f81b7fa30d2823784c5bf455a0316422514bb6df10e996539c1de2300e92f2",
+      "bytes": 523
     },
     "doodles_open_motivation_mail004": {
       "path": "assets/anchors/doodles_open_motivation_mail004.md",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
       "description": "手绘开放艺术动机锚点",
-      "sha256": "fe549cd382e5d2c18cb59317ad32b9a8718b134fa80c9411e8452abb6172bf7d",
-      "bytes": 481
+      "sha256": "c6085ec10066da9da9afca203da3302206170d861a9897c14e60c002747a30dd",
+      "bytes": 487
     },
     "story_producer_brief": {
       "path": "assets/craft/story_producer_brief.md",
@@ -87,11 +87,11 @@
     },
     "inner_photo_craft": {
       "path": "assets/craft/inner_photo_craft.md",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "WAVE_VERBATIM_BRIEF",
       "description": "内层写真五岗权责（支持 3:4 / 4:3）",
-      "sha256": "bce27b4d8c58514696e041cbeeb76199c0710fa8c50c627db3ba6773914c9bfe",
-      "bytes": 2240
+      "sha256": "b63d685fe912ba531a5e25e3f835b8d8108791167afedff1a7f759c69652f281",
+      "bytes": 2735
     },
     "cinematography_authoritative": {
       "path": "assets/craft/cinematography_authoritative.md",
@@ -103,11 +103,11 @@
     },
     "outer_tactile_craft": {
       "path": "assets/craft/outer_tactile_craft.md",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "delivery_mode": "WAVE_VERBATIM_BRIEF",
       "description": "外层纸品、书写、手绘与 6 版式导演使命",
-      "sha256": "ec00be4f328820dd9dac6db31d364299f11d9e7fa9d8ef2f6276bd6dca11cea5",
-      "bytes": 8227
+      "sha256": "9fc66fed94340c6399796b1f83e2eab88693c61173c49a5dfb8da46317d801c8",
+      "bytes": 8257
     },
     "library_100books_public": {
       "path": "assets/books/library_100books_public.json",
@@ -116,6 +116,59 @@
       "description": "100 本（400 章）版权安全乱序公开书库",
       "sha256": "353a100b80ed2a768b2c6d1a2bb1fcda54a817439b6539be10e9f663580ff1bc",
       "bytes": 149505
+    },
+    "default_profiles": {
+      "path": "assets/roles/default_profiles.json",
+      "version": "1.0.1",
+      "delivery_mode": "AUTHORITATIVE_DEFAULT_PROFILES",
+      "description": "两套完整默认恋人角色",
+      "sha256": "56c28a544e87c2b575a72ad46ae0fa2cc1d1fa38e8b4ab3b66cba79e4b95b211",
+      "bytes": 9001
+    },
+    "wardrobe_male": {
+      "path": "assets/anchors/wardrobe_male.md",
+      "version": "1.0.1",
+      "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
+      "description": "成年男性服装魅力校准锚点",
+      "sha256": "84f9d4ffb27be8b30d0595bc4863ef4f0aa928989e0a90a76c36d4bc54be54eb",
+      "bytes": 598
     }
-  }
+  },
+  "audit_log": [
+    {
+      "action": "authorized_update",
+      "allowed_assets": [
+        "role_card",
+        "literary_persona"
+      ],
+      "reason": "通用版默认文学能力继承与身份中性化；保留私人版历史指纹",
+      "updated": [
+        {
+          "asset_id": "role_card",
+          "old_version": "1.0.0",
+          "new_version": "1.0.1",
+          "sha256": "9c7306754defa89e8983a0080d9c9b67a7da831b809f8e241c32a16d01bf4bf0"
+        },
+        {
+          "asset_id": "literary_persona",
+          "old_version": "1.0.0",
+          "new_version": "1.0.1",
+          "sha256": "74ae812f93dffbf46f0a384175588357e03345907e4ad9a24ec860e2983ad094"
+        }
+      ]
+    },
+    {
+      "action": "authorized_update",
+      "allowed_assets": [
+        "role_card",
+        "handwriting_open_motivation_mail003",
+        "doodles_open_motivation_mail004",
+        "inner_photo_craft",
+        "outer_tactile_craft",
+        "default_profiles",
+        "wardrobe_male"
+      ],
+      "reason": "默认角色完整化及男女艺术适配；不覆盖历史指纹"
+    }
+  ]
 }

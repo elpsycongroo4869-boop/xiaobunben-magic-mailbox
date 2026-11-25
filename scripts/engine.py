@@ -81,6 +81,10 @@ def read_role_card(lock: dict) -> dict:
     return json.loads(read_asset(lock, "role_card"))
 
 
+def wardrobe_asset_id(role_card: dict) -> str:
+    return "wardrobe_male" if role_card.get("gender") == "男" else "wardrobe_five_tiers"
+
+
 def extract_visual_identity_verbatim(role_card: dict) -> str:
     vi = role_card["visual_identity"]
     return "\n".join([vi["identity"], vi["appearance"], vi["continuity"]])
@@ -323,7 +327,7 @@ def build_compiled_prompt(lock: dict, s1: dict, s2: dict, s4: dict, s5: dict, s6
     role_card = read_role_card(lock)
     visual_identity = extract_visual_identity_verbatim(role_card)
     char_relationship = read_asset(lock, "character_relationship_prompt")
-    wardrobe_anchor = read_asset(lock, "wardrobe_five_tiers")
+    wardrobe_anchor = read_asset(lock, wardrobe_asset_id(role_card))
     mail003_anchor = read_asset(lock, "handwriting_open_motivation_mail003")
     mail004_anchor = read_asset(lock, "doodles_open_motivation_mail004")
 
@@ -375,7 +379,7 @@ def cmd_list_chapters(args: argparse.Namespace) -> int:
 
 def cmd_step1_draw(args: argparse.Namespace) -> int:
     lock, lock_sha = require_clean_assets()
-    catalog = load_chapter_catalog(lock)
+    catalog = load_chapter_catalog(lock, gender_filter=read_role_card(lock)["gender"])
     chap_key = args.chapter
     if chap_key not in catalog:
         fail_json("UNKNOWN_CHAPTER", f"未找到实验章节 {chap_key}，可用：{sorted(catalog.keys())}", exit_code=2)
@@ -447,8 +451,11 @@ def cmd_step2_story(args: argparse.Namespace) -> int:
     rel_clean = {k: v for k, v in role_card["relationship"].items() if k != "partner_style_note"}
     letter_ctx = {
         "sender_name": role_card["sender_name"],
+        "gender": role_card["gender"],
+        "sender_identity": role_card["sender_identity"],
         "relationship": rel_clean,
         "letter_voice": role_card["letter_voice"],
+        "personality_and_habits": role_card.get("personality_and_habits", {}),
     }
     book = s1["book"]
 
@@ -488,7 +495,7 @@ def cmd_step3_letter_draft(args: argparse.Namespace) -> int:
     print("=== STEP 3 完成：独立初稿已落盘，进入【纯文学重读】===")
     print(f"letter_draft_sha256: {stage3['letter_draft_sha256']}\n")
     print("请以欣赏者而非合规检查员的眼光重读你的初稿，思考以下三个问题：")
-    print("1. 哪一处细节或联想最让人觉得“她真的站在那里、眼里闪着光”？")
+    print("1. 哪一处细节或联想最让人觉得“这位寄信人真的站在那里、眼里闪着光”？")
     print("2. 有没有哪一段退化成了礼貌的景点说明、任务交差或常见明信片套话？")
     print("3. 收信人读完能否自然感受到这位恋人的独特心意与语言才华？")
     print(f"\n重要：若初稿已经自然动人，完全允许保留原样（调用 step4-letter-final --run-dir {run_dir} 时传入 --keep-draft）；若有值得展开之处，可自主润色定稿。")
@@ -534,8 +541,8 @@ def cmd_step4_letter_final(args: argparse.Namespace) -> int:
     print(json.dumps(role_card["visual_identity"], ensure_ascii=False, indent=2))
     print("\n--- 角色卡 · 角色自主审美（personal_aesthetic，仅服装导演参考）---")
     print(json.dumps(role_card.get("personal_aesthetic", {}), ensure_ascii=False, indent=2))
-    print("\n--- 服装魅力五档校准锚点（目标第三档；完整原文由编译器自动注入，服装导演专注写具体时装设计）---")
-    print(read_asset(lock, "wardrobe_five_tiers"))
+    print("\n--- 当前角色服装魅力校准锚点（完整原文由编译器自动注入，服装导演专注写具体时装设计）---")
+    print(read_asset(lock, wardrobe_asset_id(role_card)))
     print("\n--- 内层写真五岗权责 ---")
     print(read_asset(lock, "inner_photo_craft"))
     print("\n--- 现行 Space 权威 Cinematography 专业知识与神奇信箱适配准则（全文）---")
@@ -762,7 +769,7 @@ def cmd_verify(args: argparse.Namespace) -> int:
         "relationship_section_verbatim": (f"【人物与关系】\n{read_asset(lock, 'character_relationship_prompt')}" in prompt_txt),
         "visual_identity_verbatim": (visual_identity in prompt_txt),
         "character_director_outputs_present": (s5["visual_priority"] in prompt_txt and s5["natural_character"] in prompt_txt),
-        "wardrobe_anchor_verbatim": (read_asset(lock, "wardrobe_five_tiers") in prompt_txt),
+        "wardrobe_anchor_verbatim": (read_asset(lock, wardrobe_asset_id(role_card)) in prompt_txt),
         "mail003_handwriting_anchor_verbatim": (read_asset(lock, "handwriting_open_motivation_mail003") in prompt_txt),
         "mail004_doodles_anchor_verbatim": (read_asset(lock, "doodles_open_motivation_mail004") in prompt_txt),
         "letter_final_verbatim": (s4["letter_final"] in prompt_txt),

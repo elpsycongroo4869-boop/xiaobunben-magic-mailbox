@@ -34,7 +34,7 @@ class MagicMailboxV1ReleaseTests(unittest.TestCase):
         self.assertEqual(res.returncode, 0, res.stderr)
         obj = json.loads(res.stdout)
         self.assertTrue(obj["ok"])
-        self.assertEqual(obj["asset_count"], 11)
+        self.assertEqual(obj["asset_count"], 13)
         lock = json.loads((self.pkg / "assets/asset_lock.json").read_text(encoding="utf-8"))
         self.assertEqual(len(lock["v014_frozen_baseline_sha256"]), 11)
         self.assertEqual(
@@ -69,6 +69,17 @@ class MagicMailboxV1ReleaseTests(unittest.TestCase):
             d2 = json.loads(r2.stdout)
             self.assertTrue(all(c["gender"] in ("全部", g) for c in d2["chapters"]))
 
+    def test_06_defaults_and_gender_guard(self) -> None:
+        setup = str(self.pkg / "scripts/setup_role.py")
+        for profile, gender, name in [("female", "女", "林晚"), ("male", "男", "江远")]:
+            self.assertEqual(self.run_cli(setup, [profile]).returncode, 0)
+            card = json.loads((self.pkg / "assets/roles/role_card.json").read_text())
+            self.assertEqual((card["gender"], card["sender_name"]), (gender, name))
+            self.assertIn("出色的文学表达能力", card["letter_voice"]["writing_guidance"])
+            self.assertEqual(self.run_cli(self.guard, ["verify"]).returncode, 0)
+        self.assertEqual(self.run_cli(setup, ["female"]).returncode, 0)
+        self.assertNotEqual(self.run_cli(self.eng, ["--chapter", "P68/1", "--run-dir", str(self.pkg / "exp_runs/blocked"), "step1-draw"]).returncode, 0)
+
     def test_04_photo_layout_mismatch_blocked(self) -> None:
         rd = self.pkg / "exp_runs/mismatch_test"
         self.assertEqual(self.run_cli(self.eng, ["--chapter", "P30/4", "--run-dir", str(rd), "step1-draw"]).returncode, 0)
@@ -93,6 +104,8 @@ class MagicMailboxV1ReleaseTests(unittest.TestCase):
         ]
         letter = "亲爱的：\n\n隔着屏幕没法见面，但我还是想把今天最真实的一刻写进信里寄给你。"
         for ck, mode, code, canvas, p_asp in specs:
+            gender = "male" if ck == "P68/1" else "female"
+            self.assertEqual(self.run_cli(str(self.pkg / "scripts/setup_role.py"), [gender]).returncode, 0)
             rd = self.pkg / f"exp_runs/v1_{mode}"
             self.assertEqual(self.run_cli(self.eng, ["--chapter", ck, "--run-dir", str(rd), "step1-draw"]).returncode, 0)
             self.assertEqual(self.run_cli(self.eng, ["--run-dir", str(rd), "step2-story", "--story-json", json.dumps({"producer_point": "真实旅途瞬间", "emotion_cause": "跨越距离的倾诉"}, ensure_ascii=False)]).returncode, 0)
@@ -108,6 +121,9 @@ class MagicMailboxV1ReleaseTests(unittest.TestCase):
             self.assertIn(canvas, ptxt)
             self.assertIn(p_asp, ptxt)
             self.assertIn(letter, ptxt)
+            self.assertIn("29-year-old adult East Asian man" if gender == "male" else "26-year-old adult East Asian woman", ptxt)
+            if gender == "male":
+                self.assertNotIn("若成年女性的服装魅力分为五档", ptxt)
             self.assertIn("照片画面完整无遮挡", ptxt)
             self.assertIn("每一字清晰可读", ptxt)
 

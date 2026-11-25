@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+exp_runs/
+.DS_Store
+assets/books/custom_books.json
