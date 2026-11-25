@@ -1,0 +1,121 @@
+{
+  "schema": "mailbox-asset-lock-v1",
+  "release_version": "1.0.0",
+  "inherited_base": "magic-mailbox-v0.2.6",
+  "repository": "https://github.com/elpsycongroo4869-boop/xiaobunben-magic-mailbox",
+  "v014_frozen_baseline_sha256": {
+    "book_p30_4": "868cf0d0192b0a39e43a930ea1bdce73314206d1b38ed8c84fe40116e4311bc8",
+    "role_card_v3": "1f084b08b3ed3249017954939dc547b1a064410a19abed7ff2320ab227d70a98",
+    "xiaobunben_literary_persona": "4d5fdaa83ff4127fc64b8ee5ba133f68950ad12bc9ac48c5d08ac836c587d0a3",
+    "character_relationship_prompt": "22560d080863f6b0be63324c10ac3a26e2d9c7c3667040436aaeaac86798b0eb",
+    "wardrobe_five_tiers": "d841e5dc9f13fb4fdd89c4ab5f94e84b1157ef11a58f8f13de42fed5b60e25c8",
+    "handwriting_open_motivation_mail003": "79e3570e0cbf8c26ba72ee81c34a7a4bb7269d8283be6a199b78d40eb3d23ef1",
+    "doodles_open_motivation_mail004": "fe549cd382e5d2c18cb59317ad32b9a8718b134fa80c9411e8452abb6172bf7d",
+    "story_producer_brief": "428dd5e29882ab2a06aef016b3852e33884e20d3f99086a438c6b9a246ee1653",
+    "inner_photo_craft": "7370b507c806c3480c165abe7f2382677d16f2423add986ce29ec42ae39cf79f",
+    "cinematography_authoritative": "f09ad331182960ca828b26729a033dbcba486db3504b5fc6081fac6945e916f4",
+    "outer_tactile_craft": "386751c2aa5061845c1447be6c5a27e9d443509342d4736bce51eb702ec434b6"
+  },
+  "v026_authorized_delta_sha256": {
+    "inner_photo_craft": {
+      "v014_sha256": "7370b507c806c3480c165abe7f2382677d16f2423add986ce29ec42ae39cf79f",
+      "v026_sha256": "bc2404218fbebc9c093e156577bd4ee73296392421510392dcc292e70ab59c18",
+      "reason": "授权最小改动：允许内层摄影导演依据故事自主决定写真画幅（3:4 或 4:3），不受外层反向限制"
+    },
+    "outer_tactile_craft": {
+      "v014_sha256": "386751c2aa5061845c1447be6c5a27e9d443509342d4736bce51eb702ec434b6",
+      "v026_sha256": "ec00be4f328820dd9dac6db31d364299f11d9e7fa9d8ef2f6276bd6dca11cea5",
+      "reason": "授权升级实体版式导演：承接内层画幅，支持 6 种上下左右桌面排布，零轮换配额，严守照片与原信无遮挡红线"
+    }
+  },
+  "assets": {
+    "role_card": {
+      "path": "assets/roles/role_card.json",
+      "version": "1.0.0",
+      "delivery_mode": "AUTHORITATIVE_ROLE_CARD",
+      "description": "恋人伴侣通用角色卡（支持零代码初始化）",
+      "sha256": "4d2abc38536ad40c9be1d79e490445ab5b9ef0db1ba8e94c34ac51466b556c53",
+      "bytes": 3831
+    },
+    "literary_persona": {
+      "path": "assets/roles/literary_persona.md",
+      "version": "1.0.0",
+      "delivery_mode": "WAVE_VERBATIM_BRIEF",
+      "description": "私人手写信文学人格与书写原则",
+      "sha256": "3d5bc315407d1422e0f72be09ed905158fef5734b32136fcab955f7fa597e3ef",
+      "bytes": 3694
+    },
+    "character_relationship_prompt": {
+      "path": "assets/anchors/character_relationship_prompt.md",
+      "version": "1.0.0",
+      "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
+      "description": "人物与伴侣关系叙事因锚点",
+      "sha256": "bd196e88e9008e0e7d02b73d894c76d25a9a6dd0971281566b4b8bccf4b1c12e",
+      "bytes": 525
+    },
+    "wardrobe_five_tiers": {
+      "path": "assets/anchors/wardrobe_five_tiers.md",
+      "version": "1.0.0",
+      "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
+      "description": "服装魅力五档校准锚点",
+      "sha256": "806d436dc9e1d9717ba47aebe1d9a28f039c18df0b8e524f8f2e9aec2d3ee7e8",
+      "bytes": 856
+    },
+    "handwriting_open_motivation_mail003": {
+      "path": "assets/anchors/handwriting_open_motivation_mail003.md",
+      "version": "1.0.0",
+      "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
+      "description": "书写开放艺术动机锚点",
+      "sha256": "79e3570e0cbf8c26ba72ee81c34a7a4bb7269d8283be6a199b78d40eb3d23ef1",
+      "bytes": 517
+    },
+    "doodles_open_motivation_mail004": {
+      "path": "assets/anchors/doodles_open_motivation_mail004.md",
+      "version": "1.0.0",
+      "delivery_mode": "VERBATIM_PROMPT_ANCHOR",
+      "description": "手绘开放艺术动机锚点",
+      "sha256": "fe549cd382e5d2c18cb59317ad32b9a8718b134fa80c9411e8452abb6172bf7d",
+      "bytes": 481
+    },
+    "story_producer_brief": {
+      "path": "assets/craft/story_producer_brief.md",
+      "version": "1.0.0",
+      "delivery_mode": "WAVE_VERBATIM_BRIEF",
+      "description": "制作人与情绪导演权责",
+      "sha256": "428dd5e29882ab2a06aef016b3852e33884e20d3f99086a438c6b9a246ee1653",
+      "bytes": 815
+    },
+    "inner_photo_craft": {
+      "path": "assets/craft/inner_photo_craft.md",
+      "version": "1.0.0",
+      "delivery_mode": "WAVE_VERBATIM_BRIEF",
+      "description": "内层写真五岗权责（支持 3:4 / 4:3）",
+      "sha256": "bce27b4d8c58514696e041cbeeb76199c0710fa8c50c627db3ba6773914c9bfe",
+      "bytes": 2240
+    },
+    "cinematography_authoritative": {
+      "path": "assets/craft/cinematography_authoritative.md",
+      "version": "1.0.0",
+      "delivery_mode": "WAVE_VERBATIM_BRIEF",
+      "description": "电影摄影专业指南（MIT 来源见 THIRD_PARTY_NOTICES.md）",
+      "sha256": "f09ad331182960ca828b26729a033dbcba486db3504b5fc6081fac6945e916f4",
+      "bytes": 8298
+    },
+    "outer_tactile_craft": {
+      "path": "assets/craft/outer_tactile_craft.md",
+      "version": "1.0.0",
+      "delivery_mode": "WAVE_VERBATIM_BRIEF",
+      "description": "外层纸品、书写、手绘与 6 版式导演使命",
+      "sha256": "ec00be4f328820dd9dac6db31d364299f11d9e7fa9d8ef2f6276bd6dca11cea5",
+      "bytes": 8227
+    },
+    "library_100books_public": {
+      "path": "assets/books/library_100books_public.json",
+      "version": "1.0.0",
+      "delivery_mode": "AUTHORITATIVE_PUBLIC_LIBRARY",
+      "description": "100 本（400 章）版权安全乱序公开书库",
+      "sha256": "353a100b80ed2a768b2c6d1a2bb1fcda54a817439b6539be10e9f663580ff1bc",
+      "bytes": 149505
+    }
+  }
+}
