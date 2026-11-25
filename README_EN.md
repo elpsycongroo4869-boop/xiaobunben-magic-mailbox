@@ -27,3 +27,7 @@ No coding, no servers, no API keys, no browser plugins required — works direct
 4. Send your trigger command whenever you want a new letter, then click **Open Mail (打开邮件)** to receive your postcard.
 
 See [`docs/QUICKSTART.md`](docs/QUICKSTART.md) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for details and attributions.
+
+## Acknowledgments · Where It All Began
+
+Special thanks to [yomemado](https://github.com/jianjidanbenren-eng/yomemado) and its creator. Discovering this project inspired the original idea for Magic Mailbox. Its creator may not know how their work inspired us, but we would like to express our sincere gratitude here.
