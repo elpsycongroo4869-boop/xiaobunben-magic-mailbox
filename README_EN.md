@@ -15,7 +15,7 @@
 | ![Vet Clinic](examples/04_vet_puppy_three_meters.png) | ![Magic Academy](examples/02_magic_academy_teapot.png) |
 
 ## Ready-to-use default partners
-Choose the complete adult female profile Lin Wan (26) or adult male profile Jiang Yuan (29). Both inherit rich imagination, literary skill, romantic sensibility and the full art workflow. No prompt tuning is required; personalization is optional. Ask ChatGPT to read CHATGPT.md and use the default female or male profile. See [the literary and profile guide](docs/LETTER_WRITING.md).
+Choose the complete adult female profile Lin Wan (26) or adult male profile Jiang Yuan (29). Both inherit rich imagination, literary skill, romantic sensibility and the full art workflow. No prompt tuning is required; personalization is optional. Personality and the story are the causes; each letter’s emotions arise naturally, without preset mood options, draws or quotas. Ask ChatGPT to read CHATGPT.md and use the default female or male profile. See [the literary and profile guide](docs/LETTER_WRITING.md).
 
 ## 🚀 Zero-Code Quick Start (Runs Natively in ChatGPT)
 No coding, no servers, no API keys, no browser plugins required — works directly in ChatGPT.

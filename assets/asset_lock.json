@@ -34,8 +34,8 @@
       "version": "1.0.1",
       "delivery_mode": "AUTHORITATIVE_ROLE_CARD",
       "description": "恋人伴侣通用角色卡（支持零代码初始化）",
-      "sha256": "f364390371a27c623dd337e14f4d89c51bc10e9026dde2a644e78fa4f0a6c013",
-      "bytes": 4331
+      "sha256": "6108b4b0fa0840f31dcf84b8b2f81dc9f03fbc185ccf2ccc961957fcd16162f5",
+      "bytes": 4163
     },
     "literary_persona": {
       "path": "assets/roles/literary_persona.md",
@@ -122,8 +122,8 @@
       "version": "1.0.1",
       "delivery_mode": "AUTHORITATIVE_DEFAULT_PROFILES",
       "description": "两套完整默认恋人角色",
-      "sha256": "56c28a544e87c2b575a72ad46ae0fa2cc1d1fa38e8b4ab3b66cba79e4b95b211",
-      "bytes": 9001
+      "sha256": "8124ece3130e1007d48a8794b9dfec966bfcd0beb6c783f5c98b537aba3dfbcd",
+      "bytes": 8661
     },
     "wardrobe_male": {
       "path": "assets/anchors/wardrobe_male.md",
@@ -169,6 +169,24 @@
         "wardrobe_male"
       ],
       "reason": "默认角色完整化及男女艺术适配；不覆盖历史指纹"
+    },
+    {
+      "action": "authorized_update",
+      "allowed_assets": [
+        "role_card",
+        "default_profiles"
+      ],
+      "reason": "移除预设情绪结果字段；性格与事件是因，情绪自然生成",
+      "updated": [
+        {
+          "asset_id": "role_card",
+          "sha256": "6108b4b0fa0840f31dcf84b8b2f81dc9f03fbc185ccf2ccc961957fcd16162f5"
+        },
+        {
+          "asset_id": "default_profiles",
+          "sha256": "8124ece3130e1007d48a8794b9dfec966bfcd0beb6c783f5c98b537aba3dfbcd"
+        }
+      ]
     }
   ]
 }
