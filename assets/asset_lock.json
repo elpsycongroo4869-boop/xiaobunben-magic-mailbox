@@ -34,8 +34,8 @@
       "version": "1.0.1",
       "delivery_mode": "AUTHORITATIVE_ROLE_CARD",
       "description": "恋人伴侣通用角色卡（支持零代码初始化）",
-      "sha256": "6108b4b0fa0840f31dcf84b8b2f81dc9f03fbc185ccf2ccc961957fcd16162f5",
-      "bytes": 4163
+      "sha256": "3f863f2c040d2cea8a2b336c7f53f91bf92de65305685ed5aad837dc3a3358be",
+      "bytes": 4835
     },
     "literary_persona": {
       "path": "assets/roles/literary_persona.md",
@@ -106,8 +106,8 @@
       "version": "1.0.1",
       "delivery_mode": "WAVE_VERBATIM_BRIEF",
       "description": "外层纸品、书写、手绘与 6 版式导演使命",
-      "sha256": "9fc66fed94340c6399796b1f83e2eab88693c61173c49a5dfb8da46317d801c8",
-      "bytes": 8257
+      "sha256": "30cc80a69df77c3d44deab64d47d492f37b0c3d26e2a45b526c390d947418b27",
+      "bytes": 8784
     },
     "library_100books_public": {
       "path": "assets/books/library_100books_public.json",
@@ -122,8 +122,8 @@
       "version": "1.0.1",
       "delivery_mode": "AUTHORITATIVE_DEFAULT_PROFILES",
       "description": "两套完整默认恋人角色",
-      "sha256": "8124ece3130e1007d48a8794b9dfec966bfcd0beb6c783f5c98b537aba3dfbcd",
-      "bytes": 8661
+      "sha256": "9239e55de876018c42535571283e204a8b345635f2961356110a107811f007cf",
+      "bytes": 10005
     },
     "wardrobe_male": {
       "path": "assets/anchors/wardrobe_male.md",
@@ -185,6 +185,29 @@
         {
           "asset_id": "default_profiles",
           "sha256": "8124ece3130e1007d48a8794b9dfec966bfcd0beb6c783f5c98b537aba3dfbcd"
+        }
+      ]
+    },
+    {
+      "action": "authorized_update",
+      "allowed_assets": [
+        "role_card",
+        "default_profiles",
+        "outer_tactile_craft"
+      ],
+      "reason": "完整继承丰富的默认纸面艺术动机，保留个人调整与开放结果",
+      "updated": [
+        {
+          "asset_id": "role_card",
+          "sha256": "3f863f2c040d2cea8a2b336c7f53f91bf92de65305685ed5aad837dc3a3358be"
+        },
+        {
+          "asset_id": "default_profiles",
+          "sha256": "9239e55de876018c42535571283e204a8b345635f2961356110a107811f007cf"
+        },
+        {
+          "asset_id": "outer_tactile_craft",
+          "sha256": "30cc80a69df77c3d44deab64d47d492f37b0c3d26e2a45b526c390d947418b27"
         }
       ]
     }

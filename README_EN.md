@@ -17,6 +17,9 @@
 ## Ready-to-use default partners
 Choose the complete adult female profile Lin Wan (26) or adult male profile Jiang Yuan (29). Both inherit rich imagination, literary skill, romantic sensibility and the full art workflow. No prompt tuning is required; personalization is optional. Personality and the story are the causes; each letter’s emotions arise naturally, without preset mood options, draws or quotas. Ask ChatGPT to read CHATGPT.md and use the default female or male profile. See [the literary and profile guide](docs/LETTER_WRITING.md).
 
+## Rich by default, personal by choice
+Both default partners come with expressive literary writing, rich hand-drawn doodles and personal handwriting art. No extra setup is needed. Each letter’s actual mood, marks, colors and composition arise from its story and the creator’s judgment, not fixed quotas. If a letter feels too sweet or ornate, simply ask your AI: “Keep the literary quality, but make the affection more understated,” or “Keep the warmth, but use fewer doodles.” You can also ask for richer artwork. See [the personalization guide](docs/LETTER_WRITING.md).
+
 ## 🚀 Zero-Code Quick Start (Runs Natively in ChatGPT)
 No coding, no servers, no API keys, no browser plugins required — works directly in ChatGPT.
 
