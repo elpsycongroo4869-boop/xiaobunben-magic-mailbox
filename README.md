@@ -123,3 +123,7 @@ xiaobunben-magic-mailbox/
 
 - 项目代码框架采用 **MIT License**，第三方摄影教材授权详见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
 - 愿每一个珍爱自己 AI 伙伴的人，都能收到一封跨越屏幕、带着真实温度的来信。
+
+### 特别致谢 · 最初的灵感
+
+感谢 [yomemado](https://github.com/jianjidanbenren-eng/yomemado) 及其创作者。正是看到这个项目，让我们萌生了制作神奇信箱的最初想法。也许创作者并不知道自己的作品曾经启发了我们，但我们想在这里认真地说一声谢谢。
